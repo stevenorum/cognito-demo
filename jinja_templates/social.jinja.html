@@ -1,0 +1,10 @@
+{# See LICENSE for info about reusing this file; in its original form it came from http://manuelmoreale.com/ #}
+{# Still need to add support for this stuff in the core of the site, so leaving commented out for now. #}
+{#
+{% set meta_title = (site.title.html + " - " + site.subtitle.html) if page.is_homepage else (page.title.html + " - " + site.title.html) %}
+{% set meta_desc = page.text.excerpt(140) if page and page.text else site.text.excerpt(140) %}
+<!-- Descriptions -->
+<meta content="{{ meta_desc }}" name="description">
+<!-- Page Title -->
+<title>{{ meta_title }}</title>
+#}
