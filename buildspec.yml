@@ -2,13 +2,19 @@ version: 0.2
 phases:
   install:
     commands:
-      - bash /root/scripts/install_dependencies.sh
+      - yum install -y python36-devel
+      - pip3 install --upgrade sneks
+      - install_dependencies
+#      - pip3 install --upgrade pip awscli
+#      - bash /root/scripts/install_dependencies.sh
   pre_build:
     commands:
-      - bash /root/scripts/setup_build_dir.sh
+      - setup_build_dir
+#      - bash /root/scripts/setup_build_dir.sh
   build:
     commands:
-      - bash /root/scripts/bundle_lambda.sh
+      - bundle_lambda
+#      - bash /root/scripts/bundle_lambda.sh
 artifacts:
   files:
     - NewSamTemplate.json
